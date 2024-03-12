@@ -1,0 +1,94 @@
+---
+title: "Raghav Kanda - Resume"
+---
+
+# Raghav Kanda - Resume
+
+## Contact Information
+
+-   **Email:** [raghavkanda9\@gmail.com](mailto:raghavkanda9@gmail.com)
+-   **LinkedIn:** [linkedin.com/in/raghav-kanda-8840b2205/](https://www.linkedin.com/in/raghav-kanda-8840b2205/)
+-   **Phone:** +1(647)-219-7831
+
+------------------------------------------------------------------------
+
+## Bio
+
+I am a dedicated and passionate individual pursuing an Honors Bachelor of Science degree at the University of Toronto. My academic background includes a major in Statistics and Mathematics, with a minor in Computer Science. I am proficient in various programming languages and tools, and I have a keen interest in data analysis, software development, and problem-solving.
+
+------------------------------------------------------------------------
+
+## Education & University Experience
+
+### University of Toronto \| Honors Bachelor of Science
+
+-   **Location:** Mississauga, ON
+-   **Degree:** Major in Statistics and Mathematics, Minor in Computer Science
+-   **Duration:** Sept. 2021 -- Apr. 2025
+-   **Relevant Courses:**
+    -   Software Tools & Systems Programming
+    -   Software Design
+    -   Introduction to Machine Learning
+    -   Advanced Calculus & Linear Algebra
+    -   Methods of Data Analysis
+    -   Theory of Computation
+    -   Probability & Statistics
+    -   Data Structures & Analysis
+
+------------------------------------------------------------------------
+
+## Skills
+
+### Technical Skills
+
+-   Python, Java, C, C++, Bash, SQL, ETL, R, HTML, CSS, JavaFX, Django, Node.js, 3D Modelling & Rendering, React, Google Suite, Microsoft Suite
+
+### Developer Tools
+
+-   Git, GitHub, VS Code, PyCharm, IntelliJ, CLion, nano
+
+### Soft Skills
+
+-   Willingness to keep learning
+-   Ability to work with a team
+-   Strong interpersonal skills
+-   Professional
+-   Outgoing
+-   Problem Solver
+-   Strong Analytical Skills
+-   Creative Thinking
+
+------------------------------------------------------------------------
+
+## Projects
+
+### Data Analysis with Python (Winter 2023)
+
+-   Developed a Python script for basic data handling and analysis.
+-   Utilized popular libraries such as R and Matplotlib.
+-   Loaded a sample dataset and performed basic statistical analysis.
+
+### Chat Application (Winter 2023)
+
+-   Developed a real-time chat application in C.
+-   Implemented features such as private messaging and file-sharing functionality.
+
+### Tetris Game Simulator (Fall 2023)
+
+-   Created a fully functional Tetris game using Java and JavaFX.
+-   Implemented classic game mechanics and scoring system.
+
+### Huffman File Compression and Decompression (Fall 2022)
+
+-   Designed and implemented a Huffman coding algorithm in Python for text data compression.
+
+### Boggle Game Simulator (Winter 2022)
+
+-   Developed the core backend logic for a Boggle game simulator in Java.
+-   Designed and implemented the graphical user interface using JavaFX.
+
+------------------------------------------------------------------------
+
+## Download Resume
+
+[Download PDF](~/main website/Rav_resume.pdf)
