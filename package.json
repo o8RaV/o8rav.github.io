@@ -16,9 +16,9 @@
   "author": "Jacobo Martinez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cobiwave/simplefolio/issues"
+    "url": "https://github.com/o8RaV/o8rav.github.io"
   },
-  "homepage": "https://github.com/cobiwave/simplefolio#readme",
+  "homepage": "https://github.com/o8RaV/o8rav.github.io",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.13.3",
     "parcel": "^2.13.3",
