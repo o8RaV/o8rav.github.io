@@ -5,9 +5,9 @@
   "description": "A clean, beautiful and responsive portfolio",
   "source": "index.html",
   "scripts": {
-  "start": "parcel",
-  "build": "parcel build index.html",
-  "deploy": "npm run build && gh-pages -d dist"
+    "start": "parcel",
+    "build": "parcel build index.html",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,6 @@
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.3",
     "popper.js": "^1.16.1",
-    "vanilla-tilt": "^1.8.0"
+    "vanilla-tilt": "^1.8.1"
   }
 }

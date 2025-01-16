@@ -669,7 +669,7 @@ var classCallCheck = function(instance, Constructor) {
  * Created by Sergiu Șandor (micku7zu) on 1/27/2017.
  * Original idea: https://github.com/gijsroge/tilt.js
  * MIT License.
- * Version 1.8.0
+ * Version 1.8.1
  */ var VanillaTilt = function() {
     function VanillaTilt(element) {
         var settings = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -752,7 +752,10 @@ var classCallCheck = function(instance, Constructor) {
     VanillaTilt.prototype.destroy = function destroy() {
         clearTimeout(this.transitionTimeout);
         if (this.updateCall !== null) cancelAnimationFrame(this.updateCall);
-        this.reset();
+        this.element.style.willChange = "";
+        this.element.style.transition = "";
+        this.element.style.transform = "";
+        this.resetGlare();
         this.removeEventListeners();
         this.element.vanillaTilt = null;
         delete this.element.vanillaTilt;
