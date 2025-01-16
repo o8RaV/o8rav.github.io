@@ -2936,7 +2936,6 @@ textarea.form-control-lg {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  -webkit-user-select: none;
   user-select: none;
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
@@ -5505,7 +5504,6 @@ textarea.form-control-lg {
 
 .btn-close:disabled, .btn-close.disabled {
   pointer-events: none;
-  -webkit-user-select: none;
   user-select: none;
   opacity: .25;
 }
@@ -7035,15 +7033,12 @@ textarea.form-control-lg {
 
 .placeholder-wave {
   animation: 2s linear infinite placeholder-wave;
-  -webkit-mask-image: linear-gradient(130deg, #000 55%, #000c 75%, #000 95%);
   mask-image: linear-gradient(130deg, #000 55%, #000c 75%, #000 95%);
-  -webkit-mask-size: 200% 100%;
   mask-size: 200% 100%;
 }
 
 @keyframes placeholder-wave {
   100% {
-    -webkit-mask-position: -200% 0;
     mask-position: -200% 0;
   }
 }
@@ -8623,17 +8618,14 @@ textarea.form-control-lg {
 }
 
 .user-select-all {
-  -webkit-user-select: all !important;
   user-select: all !important;
 }
 
 .user-select-auto {
-  -webkit-user-select: auto !important;
   user-select: auto !important;
 }
 
 .user-select-none {
-  -webkit-user-select: none !important;
   user-select: none !important;
 }
 
@@ -12103,7 +12095,7 @@ a:hover {
   -webkit-text-fill-color: #03001e;
 }
 
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+@supports (background-clip: text) {
   .text-color-main {
     -webkit-text-fill-color: transparent;
     color: #0000;
@@ -12154,7 +12146,7 @@ a:hover {
   border-image: linear-gradient(135deg, #7303c0 0%, #03001e 100%) 1;
 }
 
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+@supports (background-clip: text) {
   .cta-btn--hero {
     -webkit-text-fill-color: transparent;
     color: #0000;
