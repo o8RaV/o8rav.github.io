@@ -660,7 +660,7 @@ function initTiltAnimation() {
     (0, _vanillaTiltDefault.default).init(elements);
 }
 
-},{"vanilla-tilt":"jiWzO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jiWzO":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","vanilla-tilt":"jiWzO"}],"jiWzO":[function(require,module,exports,__globalThis) {
 'use strict';
 var classCallCheck = function(instance, Constructor) {
     if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
