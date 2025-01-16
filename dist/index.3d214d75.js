@@ -653,14 +653,14 @@ function initScrollReveal(targetElements, defaultProps) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>initTiltAnimation);
-var _vanillaTilt = require("vanilla-tilt");
+var _vanillaTilt = require("../node_modules/vanilla-tilt");
 var _vanillaTiltDefault = parcelHelpers.interopDefault(_vanillaTilt);
 function initTiltAnimation() {
     const elements = document.querySelectorAll(".js-tilt");
     (0, _vanillaTiltDefault.default).init(elements);
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","vanilla-tilt":"jiWzO"}],"jiWzO":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../node_modules/vanilla-tilt":"jiWzO"}],"jiWzO":[function(require,module,exports,__globalThis) {
 'use strict';
 var classCallCheck = function(instance, Constructor) {
     if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
