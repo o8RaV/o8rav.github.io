@@ -37,7 +37,8 @@
   var driftDuration = 60; // seconds per full drift cycle
 
   function updateStarParallax() {
-    scrollY = window.scrollY || document.documentElement.scrollTop;
+    // Use scrolling element so it works when body is scroll container (e.g. Brave)
+    scrollY = (document.scrollingElement && document.scrollingElement.scrollTop) || window.scrollY || document.documentElement.scrollTop || 0;
     var t = (Date.now() / 1000) / driftDuration;
     var drift = (t % 1) * driftCycle;
     var y1 = scrollY * k1 + drift;
@@ -53,6 +54,7 @@
   }
   requestAnimationFrame(tick);
   window.addEventListener('scroll', updateStarParallax, { passive: true });
+  document.body.addEventListener('scroll', updateStarParallax, { passive: true });
 
   // Mobile nav toggle
   var nav = document.querySelector('.nav');
