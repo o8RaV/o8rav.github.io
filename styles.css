@@ -72,7 +72,7 @@ body {
   width: 1px;
   height: 1px;
   box-shadow: var(--stars-shadow, none);
-  animation: animStar 50s linear infinite;
+  /* transform set by JS from scroll */
 }
 #stars::after {
   content: " ";
@@ -89,7 +89,6 @@ body {
   width: 2px;
   height: 2px;
   box-shadow: var(--stars2-shadow, none);
-  animation: animStar 100s linear infinite;
 }
 #stars2::after {
   content: " ";
@@ -106,7 +105,6 @@ body {
   width: 3px;
   height: 3px;
   box-shadow: var(--stars3-shadow, none);
-  animation: animStar 150s linear infinite;
 }
 #stars3::after {
   content: " ";
@@ -117,11 +115,6 @@ body {
   height: 3px;
   background: transparent;
   box-shadow: var(--stars3-shadow, none);
-}
-
-@keyframes animStar {
-  from { transform: translateY(0); }
-  to { transform: translateY(-2000px); }
 }
 
 /* Content above stars */

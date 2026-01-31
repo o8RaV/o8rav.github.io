@@ -19,14 +19,40 @@
   }
 
   // Apply star shadows on load (700 / 200 / 100 stars)
+  var starsEl = document.getElementById('stars');
+  var stars2El = document.getElementById('stars2');
+  var stars3El = document.getElementById('stars3');
   (function initStars() {
-    var stars = document.getElementById('stars');
-    var stars2 = document.getElementById('stars2');
-    var stars3 = document.getElementById('stars3');
-    if (stars) stars.style.setProperty('--stars-shadow', multipleBoxShadow(700));
-    if (stars2) stars2.style.setProperty('--stars2-shadow', multipleBoxShadow(200));
-    if (stars3) stars3.style.setProperty('--stars3-shadow', multipleBoxShadow(100));
+    if (starsEl) starsEl.style.setProperty('--stars-shadow', multipleBoxShadow(700));
+    if (stars2El) stars2El.style.setProperty('--stars2-shadow', multipleBoxShadow(200));
+    if (stars3El) stars3El.style.setProperty('--stars3-shadow', multipleBoxShadow(100));
   })();
+
+  // Parallax: scroll-driven + continuous drift when idle (different rates = depth)
+  var scrollY = 0;
+  var k1 = 0.5;
+  var k2 = 0.35;
+  var k3 = 0.2;
+  var driftCycle = 2000; // matches ::after at top:2000px for seamless loop
+  var driftDuration = 60; // seconds per full drift cycle
+
+  function updateStarParallax() {
+    scrollY = window.scrollY || document.documentElement.scrollTop;
+    var t = (Date.now() / 1000) / driftDuration;
+    var drift = (t % 1) * driftCycle;
+    var y1 = scrollY * k1 + drift;
+    var y2 = scrollY * k2 + drift * 0.8;
+    var y3 = scrollY * k3 + drift * 0.6;
+    if (starsEl) starsEl.style.transform = 'translateY(' + (-y1) + 'px)';
+    if (stars2El) stars2El.style.transform = 'translateY(' + (-y2) + 'px)';
+    if (stars3El) stars3El.style.transform = 'translateY(' + (-y3) + 'px)';
+  }
+  function tick() {
+    updateStarParallax();
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  window.addEventListener('scroll', updateStarParallax, { passive: true });
 
   // Mobile nav toggle
   var nav = document.querySelector('.nav');
