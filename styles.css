@@ -32,7 +32,10 @@
 }
 
 html {
+  overflow-y: scroll; /* force scrollbar so page is always scrollable (fixes GitHub Pages) */
+  overflow-x: hidden;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
 
 body {
@@ -44,6 +47,7 @@ body {
   background-color: var(--bg);
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -56,7 +60,7 @@ body {
   inset: 0;
   overflow: hidden;
   z-index: 0;
-  pointer-events: none;
+  pointer-events: none; /* allow scroll/touch to pass through to document */
 }
 
 #stars,
