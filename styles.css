@@ -3,14 +3,11 @@
    ============================================ */
 
 :root {
-  /* Theme */
-  --bg: #0d0d0f;
-  --bg-elevated: #141417;
-  --bg-card: #1a1a1e;
-  --bg-gradient-start: #08080c;
-  --bg-gradient-mid: #0c0c12;
-  --bg-gradient-end: #0e0e16;
-  --border: #2a2a2f;
+  /* Theme — very dark blue */
+  --bg: #070b14;
+  --bg-elevated: #0c101c;
+  --bg-card: #0e1222;
+  --border: #1c2434;
   --text: #e8e8ec;
   --text-muted: #9a9aa3;
   --accent: #6b8afd;
@@ -50,44 +47,88 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Layered background: base gradient, then mesh orbs + grid + grain */
-body::after {
-  content: "";
+/* ============================================
+   Parallax pixel stars (animStar scroll, like original)
+   Box-shadow set via JS; CSS uses var(--stars-shadow) etc.
+   ============================================ */
+.stars-wrapper {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  overflow: hidden;
+  z-index: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, #050507 0%, #0a0a0f 40%, #0c0c14 100%);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    /* Grain texture */
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 256px 256px,
-    /* Grid lines */
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    /* Mesh orbs – blue top-left, indigo top-right, purple bottom, blue accent corner */
-    radial-gradient(ellipse 120% 90% at 0% 0%, rgba(107, 138, 253, 0.28), transparent 55%),
-    radial-gradient(ellipse 90% 100% at 100% 0%, rgba(99, 102, 241, 0.2), transparent 55%),
-    radial-gradient(ellipse 80% 80% at 50% 100%, rgba(139, 92, 246, 0.2), transparent 55%),
-    radial-gradient(ellipse 55% 55% at 85% 65%, rgba(59, 130, 246, 0.14), transparent 50%);
-  background-size:
-    256px 256px,
-    64px 64px,
-    64px 64px,
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    100% 100%;
-  background-repeat: repeat, repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-color: transparent;
-  opacity: 1;
+#stars,
+#stars2,
+#stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  box-shadow: var(--stars-shadow, none);
+  animation: animStar 50s linear infinite;
+}
+#stars::after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: var(--stars-shadow, none);
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  box-shadow: var(--stars2-shadow, none);
+  animation: animStar 100s linear infinite;
+}
+#stars2::after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: var(--stars2-shadow, none);
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  box-shadow: var(--stars3-shadow, none);
+  animation: animStar 150s linear infinite;
+}
+#stars3::after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: var(--stars3-shadow, none);
+}
+
+@keyframes animStar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2000px); }
+}
+
+/* Content above stars */
+.header,
+main {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -123,7 +164,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(13, 13, 15, 0.85);
+  background: rgba(7, 11, 20, 0.88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -258,7 +299,7 @@ main {
 
 .hero-label {
   font-size: 0.85rem;
-  color: var(--accent);
+  color: #8ba4ff;
   font-family: var(--mono);
   letter-spacing: 0.08em;
   margin: 0 0 0.5rem;
@@ -277,7 +318,7 @@ main {
 
 .hero-summary {
   font-size: 1.1rem;
-  color: var(--text-muted);
+  color: #b8bcc8;
   max-width: 36ch;
   margin: 0 auto 1.75rem;
   line-height: 1.65;
@@ -321,13 +362,14 @@ main {
   color: var(--bg);
 }
 .btn-secondary {
-  background: var(--accent-muted);
-  color: var(--accent);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: #d8dcf0;
+  border: 1px solid rgba(200, 210, 255, 0.35);
 }
 .btn-secondary:hover {
-  background: rgba(107, 138, 253, 0.25);
-  color: var(--accent-hover);
+  background: rgba(255, 255, 255, 0.1);
+  color: #e8ecff;
+  border-color: rgba(200, 210, 255, 0.5);
 }
 
 /* ============================================
