@@ -7,6 +7,9 @@
   --bg: #0d0d0f;
   --bg-elevated: #141417;
   --bg-card: #1a1a1e;
+  --bg-gradient-start: #08080c;
+  --bg-gradient-mid: #0c0c12;
+  --bg-gradient-end: #0e0e16;
   --border: #2a2a2f;
   --text: #e8e8ec;
   --text-muted: #9a9aa3;
@@ -41,7 +44,15 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text);
-  background: var(--bg);
+  background:
+    /* Subtle grain overlay */
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"),
+    /* Soft radial glow (accent tint) */
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(107, 138, 253, 0.08), transparent),
+    /* Dark gradient base */
+    linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 40%, var(--bg-gradient-end) 100%);
+  background-color: var(--bg);
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
 
