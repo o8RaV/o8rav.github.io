@@ -288,6 +288,24 @@ main {
   margin: 0 0 1.5rem;
 }
 
+.subsection-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  opacity: 0.85;
+}
+
+.projects .subsection-title + .projects-grid {
+  margin-bottom: 2.5rem;
+}
+
+.projects .subsection-title:not(:first-of-type) {
+  margin-top: 0.5rem;
+}
+
 /* ============================================
    Hero
    ============================================ */
@@ -318,11 +336,30 @@ main {
 .hero-summary {
   font-size: 1.1rem;
   color: #b8bcc8;
-  max-width: 36ch;
-  margin: 0 auto 1.75rem;
+  max-width: 42ch;
+  margin: 0 auto 1rem;
   line-height: 1.65;
   opacity: 0;
   animation: fadeIn 0.6s ease 0.2s forwards;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+  font-family: var(--mono);
+  color: var(--text-muted);
+  margin: 0 auto 1.5rem;
+  max-width: 48ch;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 0.25s forwards;
+}
+
+.hero-meta-sep {
+  color: var(--border);
 }
 
 .hero-cta {
@@ -440,6 +477,12 @@ main {
   }
 }
 
+@media (min-width: 900px) {
+  :root {
+    --max-width: 820px;
+  }
+}
+
 /* ============================================
    Experience (timeline)
    ============================================ */
@@ -493,6 +536,12 @@ main {
   margin: 0;
   width: 100%;
 }
+
+.timeline-subtitle {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.95em;
+}
 .timeline-company {
   font-size: 0.9rem;
   color: var(--accent);
@@ -525,11 +574,27 @@ main {
 }
 
 .project-card {
+  position: relative;
   padding: 1.25rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   transition: border-color var(--transition), transform 0.2s ease, box-shadow var(--transition);
+}
+
+.project-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.45rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  color: var(--accent);
+  background: var(--accent-muted);
+  border: 1px solid rgba(107, 138, 253, 0.25);
 }
 .project-card:hover {
   border-color: var(--accent-muted);
