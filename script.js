@@ -1,5 +1,5 @@
 /**
- * Portfolio — minimal JS: nav toggle, smooth scroll, year, star shadows.
+ * Portfolio — minimal JS: nav toggle, smooth scroll, project filters, year, star shadows.
  */
 
 (function () {
@@ -74,7 +74,7 @@
     });
   }
 
-  // Smooth scroll for anchor links (fallback for older browsers)
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var href = this.getAttribute('href');
@@ -86,6 +86,32 @@
       }
     });
   });
+
+  // Project Category Filtering
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var projectCards = document.querySelectorAll('.project-card');
+
+  if (filterBtns.length > 0 && projectCards.length > 0) {
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = this.getAttribute('data-filter');
+
+        // Update active button state
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        this.classList.add('active');
+
+        // Show/Hide project cards
+        projectCards.forEach(function (card) {
+          var categories = (card.getAttribute('data-category') || '').split(' ');
+          if (filter === 'all' || categories.indexOf(filter) !== -1) {
+            card.classList.remove('hide');
+          } else {
+            card.classList.add('hide');
+          }
+        });
+      });
+    });
+  }
 
   // Footer year
   var yearEl = document.getElementById('year');
